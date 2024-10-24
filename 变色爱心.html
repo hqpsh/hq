@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变色爱心</title>
+    <link rel="stylesheet" href="https://hqpsh.github.io/h/1.css">
+    <style>
+      </style>
+</head>
+<body onmousedown="cc()">
+  <div class="box"><img src="https://hqpsh.github.io/h/t.png" alt=""></div>
+  <div class="a"><img src="https://hqpsh.github.io/h/1716225166374.png" alt=""></div>
+  <div class="h"><button id="bu">点我换颜色</button></div>
+      <script>
+
+        document.addEventListener('mousemove', (e) => {
+          let body = document.querySelector('body');
+          let heart = document.createElement('span');
+          let x = e.offsetX;
+          let y = e.offsetY;
+          heart.style.left = x + 'px';
+          heart.style.top = y + 'px';
+          let size = Math.random() * 100;
+          heart.style.width = size + 'px';
+          heart.style.height = size + 'px';
+          body.appendChild(heart);
+          setTimeout(() => {
+            heart.remove();
+          }, 3000);
+        });
+        // 换颜色
+        function cc(){
+            var color=prompt("请输入颜色：");
+            if(color){
+                document.body.style.backgroundColor=color;
+            }
+        }
+      </script>
+</body>
+</html>
